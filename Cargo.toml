@@ -4,5 +4,8 @@ version = "0.1.0"
 authors = ["William Hua <william@attente.ca>"]
 edition = "2018"
 
+[lib]
+crate-type = ["cdylib"]
+
 [dependencies]
 wasm-bindgen = { version = "0.2.43", features = ["serde-serialize"] }
