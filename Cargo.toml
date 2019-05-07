@@ -8,4 +8,4 @@ edition = "2018"
 crate-type = ["cdylib"]
 
 [dependencies]
-wasm-bindgen = { version = "0.2.43", features = ["serde-serialize"] }
+wasm-bindgen = { version = "=0.2.40", features = ["serde-serialize"] }
