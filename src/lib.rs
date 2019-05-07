@@ -4,10 +4,14 @@ use wasm_bindgen::prelude::*;
 
 #[wasm_bindgen]
 pub fn btree_pass() -> Result<JsValue, JsValue> {
-    JsValue::from_serde(&BTreeMap::<u32, ()>::new()).map_err(|error| JsValue::from_str(&format!("{}", error)))
+    let mut map: BTreeMap<u32, ()> = BTreeMap::new();
+    map.insert(42, ());
+    JsValue::from_serde(&map).map_err(|error| JsValue::from_str(&format!("{:?}", error)))
 }
 
 #[wasm_bindgen]
 pub fn btree_fail() -> Result<JsValue, JsValue> {
-    JsValue::from_serde(&BTreeMap::<(u32, u32), ()>::new()).map_err(|error| JsValue::from_str(&format!("{}", error)))
+    let mut map: BTreeMap<(u32, u32), ()> = BTreeMap::new();
+    map.insert((1, 2), ());
+    JsValue::from_serde(&map).map_err(|error| JsValue::from_str(&format!("{:?}", error)))
 }
