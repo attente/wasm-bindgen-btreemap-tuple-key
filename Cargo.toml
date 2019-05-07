@@ -5,3 +5,4 @@ authors = ["William Hua <william@attente.ca>"]
 edition = "2018"
 
 [dependencies]
+wasm-bindgen = { version = "0.2.43", features = ["serde-serialize"] }
